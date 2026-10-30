@@ -23,3 +23,9 @@ export function venderEntradas(peliculaId, cantidad) {
   );
   return true;
 }
+
+export function calcularTotalIngresos() {
+  return peliculas.reduce((total, pelicula) => {
+    return total + pelicula.entradasVendidas * pelicula.precio;
+  }, 0);
+}
